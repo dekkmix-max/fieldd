@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>สำหรับคนที่เค้ารักที่สุด 💗</title>
+<title>Happy 1st Anniversary 💗</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;700&display=swap" rel="stylesheet">
@@ -14,95 +14,89 @@
 <body>
 
 <div class="hearts"></div>
-<div class="spark-bg"></div>
+<div class="fireworks"></div>
 
-<div class="card">
+<div class="envelope" id="envelope">
 
-<div class="kitty">
-<svg viewBox="0 0 220 220">
-  <g class="twinkle">
-    <text x="18" y="30">✨</text>
-    <text x="185" y="42">✨</text>
-    <text x="28" y="182">✨</text>
-    <text x="180" y="170">✨</text>
-  </g>
+  <div class="flap"></div>
 
-  <polygon points="55,70 80,25 100,75" fill="#fff"/>
-  <polygon points="165,70 140,25 120,75" fill="#fff"/>
-  <polygon points="65,58 80,38 92,62" fill="#ffc5d8"/>
-  <polygon points="155,58 140,38 128,62" fill="#ffc5d8"/>
+  <div class="letter">
 
-  <circle cx="110" cy="105" r="62" fill="#fff"/>
+    <div class="kitty">
+      🎀🐱💗
+    </div>
 
-  <ellipse cx="145" cy="42" rx="22" ry="17" fill="#ff91b7"/>
-  <ellipse cx="177" cy="42" rx="22" ry="17" fill="#ff91b7"/>
-  <circle cx="161" cy="42" r="8" fill="#ff5d96"/>
+    <h1>Happy 1st Anniversary</h1>
+    <p class="subtitle">สำหรับคนที่เค้ารักที่สุด</p>
 
-  <ellipse cx="85" cy="98" rx="5" ry="7" fill="#333"/>
-  <ellipse cx="135" cy="98" rx="5" ry="7" fill="#333"/>
+    <div id="typeText" class="typeText"></div>
 
-  <ellipse cx="110" cy="114" rx="8" ry="5" fill="#f7d77a"/>
+    <div class="sparkles">✨ 💖 ✨ 💗 ✨</div>
 
-  <circle cx="72" cy="124" r="8" fill="#ffd4e0"/>
-  <circle cx="148" cy="124" r="8" fill="#ffd4e0"/>
+    <button class="backBtn" onclick="history.back()">← กลับหน้าก่อน</button>
 
-  <line x1="55" y1="100" x2="82" y2="98" stroke="#555" stroke-width="2"/>
-  <line x1="50" y1="112" x2="82" y2="112" stroke="#555" stroke-width="2"/>
-  <line x1="138" y1="98" x2="168" y2="100" stroke="#555" stroke-width="2"/>
-  <line x1="138" y1="112" x2="172" y2="112" stroke="#555" stroke-width="2"/>
-</svg>
-</div>
-
-<h1>เย้ 💗</h1>
-
-<p class="subtitle">ขอบคุณที่กดเข้ามานะ</p>
-
-<div class="letter">
-
-<p>เค้ารักอ้วนมากๆเลยนะอ้วนรู้บ้างมั้ย บางทีเค้าอาจจะคิดเล็กคิดน้อยไปบ้าง อาจจะทำให้อ้วนอึดอัด แต่เชื่อเถอะที่เค้าเป็นแบบนี้เพราะเค้ารักเธอที่สุด</p>
-
-<p>เธอจะเป็นของเค้าไปเรื่อยๆ ตราบใดที่เรายังเลือกกันอยู่ ไม่เคยจะคิดนอกใจอ้วนเลย ตลอดระยะเวลาที่ผ่านมาเราเจอหลายๆเรื่องมาด้วยกัน ผ่านอะไรกันมามากมาย</p>
-
-<p>สุดท้ายเค้าอยากบอกอ้วนว่า...</p>
-
-<p>ขอบคุณที่อยู่กับเค้ามาจนครบ 1 ปี ที่เรายังมีกันและยังเลือกกันอยู่ 💗</p>
-
-<p><b>Happy 1st Anniversary, Field. I love you the most. 💖</b></p>
-
-</div>
-
-<div class="sparkles">✨ 💗 ✨ 💖 ✨ 💗 ✨</div>
-
-<button class="backBtn" onclick="history.back()">← กลับหน้าก่อน</button>
+  </div>
 
 </div>
 
 <script>
+// เปิดซอง
+setTimeout(()=>{
+document.getElementById("envelope").classList.add("open");
+},600);
+
+// พิมพ์ข้อความ
+const message=`เค้ารักอ้วนมากๆเลยนะอ้วนรู้บ้างมั้ย
+
+บางทีเค้าอาจจะคิดเล็กคิดน้อย
+จนทำให้อ้วนอึดอัด
+
+แต่ทุกอย่างที่เค้าเป็น
+เพราะเค้ารักอ้วนที่สุด
+
+เธอจะเป็นของเค้าไปเรื่อยๆ
+ตราบใดที่เรายังเลือกกันอยู่
+
+ขอบคุณที่อยู่กับเค้ามาจนครบ 1 ปี
+
+Happy 1st Anniversary, Field.
+I love you the most. 💗`;
+
+const box=document.getElementById("typeText");
+let i=0;
+
+function typing(){
+if(i<message.length){
+box.innerHTML+=message[i]=="\n"?"<br>":message[i];
+i++;
+setTimeout(typing,32);
+}
+}
+setTimeout(typing,1300);
+
+// หัวใจลอย
 const hearts=document.querySelector(".hearts");
 
 setInterval(()=>{
-  const h=document.createElement("span");
-  h.innerHTML=Math.random()>0.5?"💗":"💖";
-
-  h.style.left=Math.random()*100+"vw";
-  h.style.fontSize=(18+Math.random()*22)+"px";
-  h.style.animationDuration=(3+Math.random()*3)+"s";
-
-  hearts.appendChild(h);
-
-  setTimeout(()=>h.remove(),6000);
+const h=document.createElement("span");
+h.innerHTML=Math.random()>0.5?"💗":"💖";
+h.style.left=Math.random()*100+"vw";
+h.style.fontSize=(18+Math.random()*24)+"px";
+h.style.animationDuration=(3+Math.random()*3)+"s";
+hearts.appendChild(h);
+setTimeout(()=>h.remove(),6000);
 },220);
 
-// พลุประกาย
-const spark=document.querySelector(".spark-bg");
+// พลุ
+const fw=document.querySelector(".fireworks");
 
 setInterval(()=>{
-  const s=document.createElement("div");
-  s.className="firework";
-  s.style.left=Math.random()*100+"vw";
-  s.style.top=Math.random()*80+"vh";
-  spark.appendChild(s);
-  setTimeout(()=>s.remove(),1200);
+const f=document.createElement("div");
+f.className="boom";
+f.style.left=Math.random()*100+"vw";
+f.style.top=Math.random()*75+"vh";
+fw.appendChild(f);
+setTimeout(()=>f.remove(),1000);
 },700);
 </script>
 

@@ -1,0 +1,131 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Kanit',sans-serif;
+}
+
+body{
+background:linear-gradient(180deg,#ffd9e8,#ffeef6);
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:100vh;
+}
+
+.card{
+width:350px;
+background:white;
+border-radius:32px;
+padding:28px 24px;
+text-align:center;
+box-shadow:0 20px 45px rgba(255,140,180,.28);
+position:relative;
+overflow:hidden;
+}
+
+.heart{
+font-size:24px;
+animation:heartbeat 1.5s infinite;
+}
+
+h1{
+font-size:30px;
+line-height:1.25;
+color:#7d4b5a;
+margin:8px 0 14px;
+}
+
+.desc{
+font-size:14px;
+color:#8d757d;
+line-height:1.8;
+}
+
+.kitty{
+display:flex;
+justify-content:center;
+margin:18px 0;
+}
+
+.kitty svg{
+width:150px;
+animation:bounce 2.2s ease-in-out infinite;
+overflow:visible;
+}
+
+.sparkles{
+animation:twinkle 1.8s infinite;
+transform-origin:center;
+}
+
+.floating-heart{
+animation:floatHeart 2s ease-in-out infinite;
+}
+
+.question{
+margin:12px 0 18px;
+color:#8d757d;
+font-size:14px;
+}
+
+.buttons{
+position:relative;
+height:110px;
+}
+
+#noBtn{
+position:absolute;
+left:50%;
+top:0;
+transform:translateX(-50%);
+padding:12px 22px;
+border:none;
+border-radius:16px;
+background:#f6dfb2;
+color:#6b4b1b;
+cursor:pointer;
+transition:.1s;
+}
+
+#yesBtn{
+position:absolute;
+left:50%;
+bottom:0;
+transform:translateX(-50%);
+width:100%;
+padding:15px;
+border:none;
+border-radius:18px;
+background:linear-gradient(135deg,#ff7f9c,#ff6b88);
+color:white;
+font-size:17px;
+font-weight:600;
+cursor:pointer;
+box-shadow:0 10px 25px rgba(255,110,150,.35);
+transition:.2s;
+}
+
+#yesBtn:hover{
+transform:translateX(-50%) scale(1.03);
+}
+
+@keyframes bounce{
+0%,100%{transform:translateY(0);}
+50%{transform:translateY(-12px);}
+}
+
+@keyframes heartbeat{
+0%,100%{transform:scale(1);}
+50%{transform:scale(1.2);}
+}
+
+@keyframes twinkle{
+0%,100%{opacity:1;transform:scale(1);}
+50%{opacity:.5;transform:scale(1.2);}
+}
+
+@keyframes floatHeart{
+0%,100%{transform:translateY(0);}
+50%{transform:translateY(-8px);}
+}

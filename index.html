@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>กลับมาเป็นเหมือนเดิมได้ไหม 🩷</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="card">
+
+<div class="heart">💗</div>
+
+<h1>กลับมาเป็นเหมือนเดิมได้ไหม</h1>
+
+<p class="desc">
+เค้าอยากขอโทษในทุกเรื่องที่ผ่านมา<br>
+ถ้าวันนี้ได้กลับมาคุยกันอีกครั้ง<br>
+เค้าสัญญาว่าจะดูแลเธอให้ดีกว่าเดิมจริงๆ 🥺
+</p>
+
+<div class="kitty">
+<svg viewBox="0 0 220 220">
+  <g class="sparkles">
+    <text x="20" y="30">✨</text>
+    <text x="185" y="40">✨</text>
+    <text x="30" y="185">✨</text>
+    <text x="180" y="175">✨</text>
+  </g>
+
+  <!-- หู -->
+  <polygon points="55,70 80,25 100,75" fill="#fff"/>
+  <polygon points="165,70 140,25 120,75" fill="#fff"/>
+  <polygon points="65,58 80,38 92,62" fill="#ffbfd5"/>
+  <polygon points="155,58 140,38 128,62" fill="#ffbfd5"/>
+
+  <!-- หน้า -->
+  <circle cx="110" cy="105" r="62" fill="#fff"/>
+
+  <!-- โบว์ -->
+  <ellipse cx="145" cy="42" rx="22" ry="17" fill="#ff8fb8"/>
+  <ellipse cx="177" cy="42" rx="22" ry="17" fill="#ff8fb8"/>
+  <circle cx="161" cy="42" r="8" fill="#ff6ea8"/>
+
+  <!-- ตา -->
+  <ellipse cx="85" cy="98" rx="5" ry="7" fill="#333"/>
+  <ellipse cx="135" cy="98" rx="5" ry="7" fill="#333"/>
+
+  <!-- จมูก -->
+  <ellipse cx="110" cy="114" rx="8" ry="5" fill="#f8d36f"/>
+
+  <!-- หนวด -->
+  <line x1="55" y1="100" x2="82" y2="98" stroke="#555" stroke-width="2"/>
+  <line x1="50" y1="112" x2="82" y2="112" stroke="#555" stroke-width="2"/>
+  <line x1="138" y1="98" x2="168" y2="100" stroke="#555" stroke-width="2"/>
+  <line x1="138" y1="112" x2="172" y2="112" stroke="#555" stroke-width="2"/>
+
+  <!-- แก้ม -->
+  <circle cx="72" cy="124" r="8" fill="#ffd1dc"/>
+  <circle cx="148" cy="124" r="8" fill="#ffd1dc"/>
+
+  <!-- มือ -->
+  <ellipse cx="88" cy="155" rx="18" ry="16" fill="#fff"/>
+  <ellipse cx="132" cy="155" rx="18" ry="16" fill="#fff"/>
+
+  <!-- หัวใจ -->
+  <text class="floating-heart" x="108" y="10">💗</text>
+</svg>
+</div>
+
+<p class="question">เธออยากกลับมาเป็นเหมือนเดิมไหม</p>
+
+<div class="buttons">
+<button id="noBtn">ไม่รักแล้ว🥺</button>
+<button id="yesBtn">💗 กลับมาเป็นเหมือนเดิม</button>
+</div>
+
+</div>
+
+<script>
+const noBtn=document.getElementById("noBtn");
+const area=document.querySelector(".buttons");
+
+function moveButton(){
+  const maxX=area.clientWidth-noBtn.offsetWidth;
+  const maxY=area.clientHeight-noBtn.offsetHeight;
+
+  const x=Math.random()*maxX;
+  const y=Math.random()*maxY;
+
+  noBtn.style.left=x+"px";
+  noBtn.style.top=y+"px";
+  noBtn.style.transform="none";
+}
+
+noBtn.addEventListener("mouseenter",moveButton);
+noBtn.addEventListener("mousemove",moveButton);
+noBtn.addEventListener("touchstart",moveButton);
+
+document.getElementById("yesBtn").onclick=()=>{
+  window.location.href="love.html";
+};
+</script>
+
+</body>
+</html>
